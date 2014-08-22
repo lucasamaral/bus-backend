@@ -1,3 +1,5 @@
 from django.contrib import admin
+from busapp.models import Stop, Point
 
-# Register your models here.
+admin.site.register(Point)
+admin.site.register(Stop)
