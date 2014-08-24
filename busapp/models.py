@@ -5,7 +5,7 @@ class Point(models.Model):
     lat = models.DecimalField(max_digits=9, decimal_places=6)
     lon = models.DecimalField(max_digits=9, decimal_places=6)
     def __unicode__(self):
-        return 'Lat:' + str(self.lat) + 'Lon:' + str(self.lon)
+        return 'Lat:%010.6fLon:%010.6f' % (self.lat, self.lon)
 
 
 class Stop(models.Model):

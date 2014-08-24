@@ -19,7 +19,6 @@ class PointViewSet(viewsets.ModelViewSet):
 
 class StopViewSet(viewsets.ModelViewSet):
     model = Stop
-        
 
 
 def index(request):
