@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 from busapp.serializers import UserSerializer, GroupSerializer
 from rest_framework import viewsets
 
-from busapp.models import Point, Stop
+from busapp.models import Point, Stop, LineSegment
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -20,6 +20,8 @@ class PointViewSet(viewsets.ModelViewSet):
 class StopViewSet(viewsets.ModelViewSet):
     model = Stop
 
+class LineSegmentViewSet(viewsets.ModelViewSet):
+    model = LineSegment
 
 def index(request):
     return render(request, 'busapp/index.html', {})
