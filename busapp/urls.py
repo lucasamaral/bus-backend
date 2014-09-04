@@ -8,9 +8,12 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'points', views.PointViewSet)
 router.register(r'stops', views.StopViewSet)
-router.register(r'lines', views.LineSegmentViewSet)
+router.register(r'segments', views.LineSegmentViewSet)
+router.register(r'buslines', views.BusLineViewSet)
+router.register(r'relations', views.BusLineRelationViewSet)
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^$', views.index, name='index'),
     url(r'^', include(router.urls)),
 )

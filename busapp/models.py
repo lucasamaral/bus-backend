@@ -32,18 +32,18 @@ class BusLine(models.Model):
     segments = models.ManyToManyField(LineSegment, through='BusLineRelation')
 
     def get_start_segment(self):
-        return self.segments.objects.order_by('order').first()
+        return BusLineRelation.objects.filter(bus_line=self).order_by('order').first()
 
     def get_end_segment(self):
-        return self.segments.objects.order_by('order').last()
+        return BusLineRelation.objects.filter(bus_line=self).order_by('order').last()
 
     def __unicode__(self):
         return self.number + '-' + self.name
 
 
 class BusLineRelation(models.Model):
-    bus_line = models.ForeignKey(BusLine)
     line_segment = models.ForeignKey(LineSegment)
+    bus_line = models.ForeignKey(BusLine)
     order = models.IntegerField()
 
     def __unicode__(self):
