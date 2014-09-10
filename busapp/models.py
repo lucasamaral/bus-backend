@@ -47,4 +47,27 @@ class BusLineRelation(models.Model):
     order = models.IntegerField()
 
     def __unicode__(self):
-        return unicode(self.bus_line) + '#' + str(self.order)
+        return unicode(self.bus_line) + '#' + unicode(self.order)
+
+
+class TimeEstimation(models.Model):
+    line_segment = models.ForeignKey(LineSegment)
+    time_value = models.IntegerField()
+
+
+class Bus(models.Model):
+    departure_time = models.DateTimeField()
+    bus_line = models.ForeignKey(BusLine)
+    estimated_times = models.ManyToManyField(TimeEstimation, through='BusEstimationRelation')
+
+    def __unicode__(self):
+        return 'Bus ' + unicode(self.departure_time)
+
+
+class BusEstimationRelation(models.Model):
+    time_estimation = models.ForeignKey(TimeEstimation)
+    bus = models.ForeignKey(Bus)
+    order = models.IntegerField()
+
+    def __unicode__(self):
+        return self.bus.bus_line.number + ' ' + unicode(self.time_estimation) + '#' + unicode(self.order)
