@@ -4,13 +4,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^blog/', include('blog.urls')),
-    
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+                       url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
-    url(r'^$', 'backend.views.home', name='home'),
+                       url(r'^$', 'backend.views.home', name='home'),
 
-    url(r'^busapp/', include('busapp.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-)
+                       url(r'^busapp/', include('busapp.urls')),
+                       url(r'^admin/', include(admin.site.urls)),
+                       )
