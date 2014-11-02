@@ -1,6 +1,11 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from busapp.models import BusLine
+from busapp.models import BusLine, Point
+
+
+class PointSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Point
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

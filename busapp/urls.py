@@ -16,4 +16,5 @@ urlpatterns = patterns(
     '',
     url(r'^$', views.index, name='index'),
     url(r'^', include(router.urls)),
+    url(r'^createsegment/$', views.BuildLineSegment.as_view()),
 )

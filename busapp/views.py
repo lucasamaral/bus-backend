@@ -1,10 +1,36 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 
-from busapp.serializers import UserSerializer, GroupSerializer, BusLineSerializer
-from rest_framework import viewsets
+from rest_framework import viewsets, views, status, permissions
+from rest_framework.response import Response
 
+from busapp.serializers import UserSerializer, GroupSerializer, BusLineSerializer, \
+    PointSerializer
 from busapp.models import Point, Stop, LineSegment, BusLine, BusLineRelation
+
+
+class BuildLineSegment(views.APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        points = build_point_list(request.DATA['points'])
+        print points
+        serializer = PointSerializer(data=points, many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def build_point_list(points):
+    parsed = []
+    for pt in points:
+        splited = pt.split(',')
+        point = {}
+        point['lat'] = float(splited[0])
+        point['lon'] = float(splited[1])
+        parsed.append(point)
+    return parsed
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -36,6 +62,8 @@ class BusLineViewSet(viewsets.ModelViewSet):
 
 class BusLineRelationViewSet(viewsets.ModelViewSet):
     model = BusLineRelation
+
+
 
 
 def index(request):

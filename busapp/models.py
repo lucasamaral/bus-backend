@@ -18,12 +18,27 @@ class Stop(models.Model):
         return self.address
 
 
+class TimeEstimation(models.Model):
+    time_value = models.IntegerField()
+
+
 class LineSegment(models.Model):
-    first_stop = models.ForeignKey(Stop, related_name="+")
-    second_stop = models.ForeignKey(Stop, related_name="+")
+    first_stop = models.ForeignKey(Stop, related_name='first_stop')
+    second_stop = models.ForeignKey(Stop, related_name='second_stop')
+    time_estimation = models.OneToOneField(TimeEstimation)
+    points = models.ManyToManyField(Point, through='LinePointRelation')
 
     def __unicode__(self):
         return unicode(self.first_stop) + ' to ' + unicode(self.second_stop)
+
+
+class LinePointRelation(models.Model):
+    line_segment = models.ForeignKey(LineSegment)
+    point = models.ForeignKey(Point)
+    order = models.IntegerField()
+
+    def __unicode__(self):
+        return 'Point: ' + unicode(self.line_segment) + '#' + unicode(self.order)
 
 
 class BusLine(models.Model):
@@ -50,24 +65,19 @@ class BusLineRelation(models.Model):
         return unicode(self.bus_line) + '#' + unicode(self.order)
 
 
-class TimeEstimation(models.Model):
-    line_segment = models.ForeignKey(LineSegment)
-    time_value = models.IntegerField()
-
-
 class Bus(models.Model):
     departure_time = models.DateTimeField()
     bus_line = models.ForeignKey(BusLine)
-    estimated_times = models.ManyToManyField(TimeEstimation, through='BusEstimationRelation')
+    # estimated_times = models.ManyToManyField(TimeEstimation, through='BusEstimationRelation')
 
     def __unicode__(self):
         return 'Bus ' + unicode(self.departure_time)
 
 
-class BusEstimationRelation(models.Model):
-    time_estimation = models.ForeignKey(TimeEstimation)
-    bus = models.ForeignKey(Bus)
-    order = models.IntegerField()
+# class BusEstimationRelation(models.Model):
+#     time_estimation = models.ForeignKey(TimeEstimation)
+#     bus = models.ForeignKey(Bus)
+#     order = models.IntegerField()
 
-    def __unicode__(self):
-        return self.bus.bus_line.number + ' ' + unicode(self.time_estimation) + '#' + unicode(self.order)
+#     def __unicode__(self):
+#         return self.bus.bus_line.number + ' ' + unicode(self.time_estimation) + '#' + unicode(self.order)
