@@ -1,11 +1,31 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from busapp.models import BusLine, Point
+from busapp.models import BusLine, Point, LineSegment, Stop, LinePointRelation, TimeEstimation
 
 
 class PointSerializer(serializers.ModelSerializer):
     class Meta:
         model = Point
+
+
+class LineSegmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LineSegment
+
+
+class StopSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stop
+
+
+class LinePointRelationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LinePointRelation
+
+
+class TimeEstimationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TimeEstimation
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

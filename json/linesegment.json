@@ -1,0 +1,21 @@
+{
+    "points": [{
+        "lat": "-23.99912",
+        "lon": "-45.12323"
+    }, {
+        "lat": "-23.91232",
+        "lon": "-45.11123"
+    }, {
+        "lat": "-23.88912",
+        "lon": "-45.55323"
+    }],
+    "first_stop": {
+        "name": "teste",
+        "address": "Avenida Nelson davila"
+    },
+    "second_stop": {
+        "name": "teste",
+        "address": "Avenida São joão"
+    },
+    "time_estimation":"900"
+}

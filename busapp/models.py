@@ -21,6 +21,9 @@ class Stop(models.Model):
 class TimeEstimation(models.Model):
     time_value = models.IntegerField()
 
+    def __unicode__(self):
+        return 'Time: ' + unicode(self.time_value)
+
 
 class LineSegment(models.Model):
     first_stop = models.ForeignKey(Stop, related_name='first_stop')
