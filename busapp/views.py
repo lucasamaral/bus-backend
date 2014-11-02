@@ -17,11 +17,11 @@ class BuildLineSegment(views.APIView):
     def post(self, request, format=None):
         data = JSONParser().parse(request)
         points = build_point_list(data['points'])
-        points_serializer = PointSerializer(data=points, many=True)
-        if points_serializer.is_valid():
-            points_serializer.save()
-            data['first_stop']['point'] = points_serializer.data[0]['id']
-            data['second_stop']['point'] = points_serializer.data[-1]['id']
+        points_ser = PointSerializer(data=points, many=True)
+        if points_ser.is_valid():
+            points_ser.save()
+            data['first_stop']['point'] = points_ser.data[0]['id']
+            data['second_stop']['point'] = points_ser.data[-1]['id']
             time = {}
             time['time_value'] = int(data['time_estimation'])
             time_ser = TimeEstimationSerializer(data=time)
@@ -49,7 +49,7 @@ class BuildLineSegment(views.APIView):
             line_ser = LineSegmentSerializer(data=line)
             if line_ser.is_valid():
                 line_ser.save()
-                line_points = build_line_points(points_serializer.data, line_ser.object.id)
+                line_points = build_line_points(points_ser.data, line_ser.object.id)
                 line_rels_ser = LinePointRelationSerializer(data=line_points, many=True)
                 if line_rels_ser.is_valid():
                     line_rels_ser.save()
@@ -59,7 +59,7 @@ class BuildLineSegment(views.APIView):
             else:
                 return Response(line_ser.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response(points_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(points_ser.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 def build_line_points(points, line_seg):
