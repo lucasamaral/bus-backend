@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
+from django.utils import six
 
 from rest_framework import viewsets, views, status, permissions
 from rest_framework.response import Response
-from rest_framework.parsers import JSONParser
+from rest_framework.parsers import BaseParser
+from rest_framework.exceptions import ParseError
+from rest_framework import renderers
+import json
 
 from busapp.serializers import UserSerializer, GroupSerializer, BusLineSerializer, \
     PointSerializer, StopSerializer, TimeEstimationSerializer, LineSegmentSerializer, \
@@ -11,11 +15,33 @@ from busapp.serializers import UserSerializer, GroupSerializer, BusLineSerialize
 from busapp.models import Point, Stop, LineSegment, BusLine, BusLineRelation
 
 
+class JSONEncodedParser(BaseParser):
+    """
+    Parses JSON-serialized data.
+    """
+
+    media_type = 'application/json'
+    renderer_class = renderers.UnicodeJSONRenderer
+
+    def parse(self, stream, media_type=None, parser_context=None):
+        """
+        Parses the incoming bytestream as JSON and returns the resulting data.
+        """
+        parser_context = parser_context or {}
+        encoding = parser_context.get('encoding', 'iso-8859-1')
+
+        try:
+            data = stream.read().decode(encoding)
+            return json.loads(data)
+        except ValueError as exc:
+            raise ParseError('JSON parse error - %s' % six.text_type(exc))
+
+
 class BuildLineSegment(views.APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format=None):
-        data = JSONParser().parse(request)
+        data = JSONEncodedParser().parse(request)
         points = build_point_list(data['points'])
         points_ser = PointSerializer(data=points, many=True)
         if points_ser.is_valid():
