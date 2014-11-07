@@ -5,9 +5,9 @@ from rest_framework import viewsets, views, status, permissions
 from rest_framework.response import Response
 
 from busapp.serializers import UserSerializer, GroupSerializer, BusLineSerializer, \
-    PointSerializer, StopSerializer, TimeEstimationSerializer, LineSegmentSerializer, \
+    PointSerializer, StopSerializer, TimeMeasuredSerializer, LineSegmentSerializer, \
     LinePointRelationSerializer
-from busapp.models import Point, Stop, LineSegment, BusLine, BusLineRelation, TimeEstimation
+from busapp.models import Point, Stop, LineSegment, BusLine, BusLineRelation, TimeMeasured
 from busapp.parsers import JSONLatinParser
 
 
@@ -22,13 +22,6 @@ class BuildLineSegment(views.APIView):
             points_ser.save()
             data['first_stop']['point'] = points_ser.data[0]['id']
             data['second_stop']['point'] = points_ser.data[-1]['id']
-            time = {}
-            time['time_value'] = int(data['time_estimation'])
-            time_ser = TimeEstimationSerializer(data=time)
-            if time_ser.is_valid():
-                time_ser.save()
-            else:
-                return Response(time_ser.errors, status=status.HTTP_400_BAD_REQUEST)
 
             stop1_ser = StopSerializer(data=data['first_stop'])
             if stop1_ser.is_valid():
@@ -45,7 +38,6 @@ class BuildLineSegment(views.APIView):
             line = {}
             line['first_stop'] = stop1_ser.object.id
             line['second_stop'] = stop2_ser.object.id
-            line['time_estimation'] = time_ser.object.id
             line_ser = LineSegmentSerializer(data=line)
             if line_ser.is_valid():
                 line_ser.save()
@@ -53,9 +45,18 @@ class BuildLineSegment(views.APIView):
                 line_rels_ser = LinePointRelationSerializer(data=line_points, many=True)
                 if line_rels_ser.is_valid():
                     line_rels_ser.save()
-                    return Response(line_ser.data, status=status.HTTP_201_CREATED)
                 else:
                     return Response(line_rels_ser.errors, status=status.HTTP_400_BAD_REQUEST)
+
+                time = {}
+                time['time_value'] = int(data['time_measured'])
+                time['line_segment'] = line_ser.object.id
+                time_ser = TimeMeasuredSerializer(data=time)
+                if time_ser.is_valid():
+                    time_ser.save()
+                    return Response(line_ser.data, status=status.HTTP_201_CREATED)
+                else:
+                    return Response(time_ser.errors, status=status.HTTP_400_BAD_REQUEST)
             else:
                 return Response(line_ser.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -101,8 +102,8 @@ class StopViewSet(viewsets.ModelViewSet):
     model = Stop
 
 
-class TimeEstimationViewSet(viewsets.ModelViewSet):
-    model = TimeEstimation
+class TimeMeasuredViewSet(viewsets.ModelViewSet):
+    model = TimeMeasured
 
 
 class LineSegmentViewSet(viewsets.ModelViewSet):

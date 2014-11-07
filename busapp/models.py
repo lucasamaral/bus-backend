@@ -18,21 +18,23 @@ class Stop(models.Model):
         return self.address
 
 
-class TimeEstimation(models.Model):
-    time_value = models.IntegerField()
-
-    def __unicode__(self):
-        return 'Time: ' + unicode(self.time_value)
-
-
 class LineSegment(models.Model):
     first_stop = models.ForeignKey(Stop, related_name='first_stop')
     second_stop = models.ForeignKey(Stop, related_name='second_stop')
-    time_estimation = models.OneToOneField(TimeEstimation)
     points = models.ManyToManyField(Point, through='LinePointRelation')
+    time_estimated = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):
         return unicode(self.first_stop) + ' to ' + unicode(self.second_stop)
+
+
+class TimeMeasured(models.Model):
+    time_value = models.IntegerField()
+    line_segment = models.ForeignKey(LineSegment)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return 'Time: ' + unicode(self.time_value) + 'Dt: ' + unicode(self.created)
 
 
 class LinePointRelation(models.Model):

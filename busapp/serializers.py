@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from busapp.models import BusLine, Point, LineSegment, Stop, LinePointRelation, TimeEstimation
+from busapp.models import BusLine, Point, LineSegment, Stop, LinePointRelation, TimeMeasured
 
 
 class PointSerializer(serializers.ModelSerializer):
@@ -23,9 +23,9 @@ class LinePointRelationSerializer(serializers.ModelSerializer):
         model = LinePointRelation
 
 
-class TimeEstimationSerializer(serializers.ModelSerializer):
+class TimeMeasuredSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TimeEstimation
+        model = TimeMeasured
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
