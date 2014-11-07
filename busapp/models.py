@@ -10,7 +10,7 @@ class Point(models.Model):
 
 
 class Stop(models.Model):
-    name = models.CharField(blank=True, null=True, max_length=100)
+    name = models.CharField(blank=True, max_length=100)
     address = models.CharField(max_length=200)
     point = models.OneToOneField(Point)
 
@@ -71,16 +71,6 @@ class BusLineRelation(models.Model):
 class Bus(models.Model):
     departure_time = models.DateTimeField()
     bus_line = models.ForeignKey(BusLine)
-    # estimated_times = models.ManyToManyField(TimeEstimation, through='BusEstimationRelation')
 
     def __unicode__(self):
         return 'Bus ' + unicode(self.departure_time)
-
-
-# class BusEstimationRelation(models.Model):
-#     time_estimation = models.ForeignKey(TimeEstimation)
-#     bus = models.ForeignKey(Bus)
-#     order = models.IntegerField()
-
-#     def __unicode__(self):
-#         return self.bus.bus_line.number + ' ' + unicode(self.time_estimation) + '#' + unicode(self.order)
