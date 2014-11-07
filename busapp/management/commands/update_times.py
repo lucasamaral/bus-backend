@@ -12,3 +12,4 @@ class Command(BaseCommand):
             average = reduce(lambda x, y: x.time_value + y.time_value)/len(times)
             rel.line_segment.time_estimated = int(average)
             rel.line_segment.save()
+            self.stdout.write('Line:%s-Avg:%s' % (rel.line_segment.id, average))
