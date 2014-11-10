@@ -1,0 +1,15 @@
+{
+   "results": [{
+      "address_components": [{
+         "long_name": "Acesso Cta",
+         "short_name": "Ac. Cta",
+         "types": ["route"]
+      }, {
+         "long_name": "Vila das Acacias",
+         "short_name": "Vila das Acacias",
+         "types": ["neighborhood", "political"]
+      }],
+      "formatted_address": "Acesso Cta, 865-969 - Vila das Acacias, São José dos Campos - SP, República Federativa do Brasil",
+      "types": ["street_address"]
+   }]
+}

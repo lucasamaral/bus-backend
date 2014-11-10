@@ -1,3 +1,5 @@
+import requests
+
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 
@@ -100,6 +102,32 @@ class PointViewSet(viewsets.ModelViewSet):
 
 class StopViewSet(viewsets.ModelViewSet):
     model = Stop
+
+    def pre_save(self, obj):
+        route = ''
+        address_str = ''
+        url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=%s,%s' % (obj.point.lat, obj.point.lon)
+        r = requests.get(url)
+        if r.status_code == 200:
+            (route, address_str) = parse_results_latlon(r.json())
+        if not obj.name and route:
+            obj.name = route
+        if not obj.address and address_str:
+            obj.address = address_str
+
+
+def parse_results_latlon(json):
+    json_results = json['results']
+    if json_results:
+        result = json_results[0]
+        comps = result['address_components']
+        for address in comps:
+            if 'route' in address['types']:
+                route = address['long_name']
+                break
+        address_str = result['formatted_address']
+        return (route, address_str)
+    return ('', '')
 
 
 class TimeMeasuredViewSet(viewsets.ModelViewSet):

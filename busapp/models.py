@@ -11,7 +11,7 @@ class Point(models.Model):
 
 class Stop(models.Model):
     name = models.CharField(blank=True, max_length=100)
-    address = models.CharField(max_length=200)
+    address = models.CharField(blank=True, max_length=200)
     point = models.OneToOneField(Point)
 
     def __unicode__(self):
