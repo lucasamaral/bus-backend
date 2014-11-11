@@ -118,16 +118,21 @@ class StopViewSet(viewsets.ModelViewSet):
 
 def parse_results_latlon(json):
     json_results = json['results']
+    address_str = ''
+    stop_name = ''
     if json_results:
         result = json_results[0]
         comps = result['address_components']
+        print repr(comps)
         for address in comps:
-            if 'route' in address['types']:
-                route = address['long_name']
+            if 'b_station' in address['types'] or 'bus_station' in address['types']:
+                stop_name = address['long_name']
+                break
+            elif 'route' in address['types']:
+                stop_name = address['long_name']
                 break
         address_str = result['formatted_address']
-        return (route, address_str)
-    return ('', '')
+    return (stop_name, address_str)
 
 
 class TimeMeasuredViewSet(viewsets.ModelViewSet):
