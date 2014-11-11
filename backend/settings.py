@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'busapp',
     'rest_framework',
+    'smuggler',
 )
 
 MIDDLEWARE_CLASSES = (
