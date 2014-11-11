@@ -123,7 +123,6 @@ def parse_results_latlon(json):
     if json_results:
         result = json_results[0]
         comps = result['address_components']
-        print repr(comps)
         for address in comps:
             if 'b_station' in address['types'] or 'bus_station' in address['types']:
                 stop_name = address['long_name']
