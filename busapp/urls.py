@@ -12,6 +12,7 @@ router.register(r'segments', views.LineSegmentViewSet)
 router.register(r'buslines', views.BusLineViewSet)
 router.register(r'relations', views.BusLineRelationViewSet)
 router.register(r'times', views.TimeMeasuredViewSet)
+router.register(r'bus', views.BusViewSet)
 
 urlpatterns = patterns(
     '',

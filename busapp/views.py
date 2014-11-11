@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from busapp.serializers import UserSerializer, GroupSerializer, BusLineSerializer, \
     PointSerializer, StopSerializer, TimeMeasuredSerializer, LineSegmentSerializer, \
     LinePointRelationSerializer
-from busapp.models import Point, Stop, LineSegment, BusLine, BusLineRelation, TimeMeasured
+from busapp.models import Point, Stop, LineSegment, BusLine, BusLineRelation, TimeMeasured, Bus
 from busapp.parsers import JSONLatinParser
 
 
@@ -140,6 +140,10 @@ class TimeMeasuredViewSet(viewsets.ModelViewSet):
 
 class LineSegmentViewSet(viewsets.ModelViewSet):
     model = LineSegment
+
+
+class BusViewSet(viewsets.ModelViewSet):
+    model = Bus
 
 
 class BusLineViewSet(viewsets.ModelViewSet):

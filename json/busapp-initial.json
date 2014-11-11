@@ -1,0 +1,740 @@
+[
+{
+  "pk": 1, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.20592", 
+    "lon": "-45.882316"
+  }
+},
+{
+  "pk": 2, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.208112", 
+    "lon": "-45.878531"
+  }
+},
+{
+  "pk": 3, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.20813", 
+    "lon": "-45.878536"
+  }
+},
+{
+  "pk": 4, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.203174", 
+    "lon": "-45.873296"
+  }
+},
+{
+  "pk": 5, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.202211", 
+    "lon": "-45.872275"
+  }
+},
+{
+  "pk": 6, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.200964", 
+    "lon": "-45.870948"
+  }
+},
+{
+  "pk": 7, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.19988", 
+    "lon": "-45.869804"
+  }
+},
+{
+  "pk": 8, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.1971", 
+    "lon": "-45.867143"
+  }
+},
+{
+  "pk": 9, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.205371", 
+    "lon": "-45.882418"
+  }
+},
+{
+  "pk": 10, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.203912", 
+    "lon": "-45.884056"
+  }
+},
+{
+  "pk": 11, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.20181", 
+    "lon": "-45.88608"
+  }
+},
+{
+  "pk": 12, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.205382", 
+    "lon": "-45.885279"
+  }
+},
+{
+  "pk": 13, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.206017", 
+    "lon": "-45.887944"
+  }
+},
+{
+  "pk": 14, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.203769", 
+    "lon": "-45.88831"
+  }
+},
+{
+  "pk": 15, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.20122", 
+    "lon": "-45.888769"
+  }
+},
+{
+  "pk": 16, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.199463", 
+    "lon": "-45.889067"
+  }
+},
+{
+  "pk": 17, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.19356", 
+    "lon": "-45.890002"
+  }
+},
+{
+  "pk": 18, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.190969", 
+    "lon": "-45.888435"
+  }
+},
+{
+  "pk": 19, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.187719", 
+    "lon": "-45.884732"
+  }
+},
+{
+  "pk": 20, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.184498", 
+    "lon": "-45.882626"
+  }
+},
+{
+  "pk": 21, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.181392", 
+    "lon": "-45.883447"
+  }
+},
+{
+  "pk": 22, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.179524", 
+    "lon": "-45.883913"
+  }
+},
+{
+  "pk": 23, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.177247", 
+    "lon": "-45.88418"
+  }
+},
+{
+  "pk": 24, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.176255", 
+    "lon": "-45.879214"
+  }
+},
+{
+  "pk": 25, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.17487", 
+    "lon": "-45.879002"
+  }
+},
+{
+  "pk": 26, 
+  "model": "busapp.point", 
+  "fields": {
+    "lat": "-23.172413", 
+    "lon": "-45.880806"
+  }
+},
+{
+  "pk": 1, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 1, 
+    "name": "Entrada CTA", 
+    "address": "Acesso Cta, 865-969 - Vila das Acacias, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 2, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 2, 
+    "name": "Av. Nossa Senhora do Loretto, s/n\u00ba", 
+    "address": "Av. Nossa Senhora do Loretto, s/n\u00ba - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 3, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 3, 
+    "name": "Av. Nossa Senhora do Loretto, s/n\u00ba", 
+    "address": "Av. Nossa Senhora do Loretto, s/n\u00ba - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 4, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 4, 
+    "name": "Av. Nossa Senhora do Loretto, s/n\u00ba", 
+    "address": "Av. Nossa Senhora do Loretto, s/n\u00ba - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 5, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 5, 
+    "name": "Av. Nossa Senhora do Loretto, s/n\u00ba", 
+    "address": "Av. Nossa Senhora do Loretto, s/n\u00ba - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 6, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 6, 
+    "name": "Av. Nossa Senhora do Loretto, s/n\u00ba", 
+    "address": "Av. Nossa Senhora do Loretto, s/n\u00ba - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 7, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 7, 
+    "name": "Av. Nossa Senhora do Loretto, s/n\u00ba", 
+    "address": "Av. Nossa Senhora do Loretto, s/n\u00ba - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 8, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 8, 
+    "name": "Rua H9A", 
+    "address": "Rua H9A, 2 - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, 12228-610, Brazil"
+  }
+},
+{
+  "pk": 9, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 9, 
+    "name": "Pra\u00e7a Marechal-do-Ar Eduardo Gomes, 1-77", 
+    "address": "Pra\u00e7a Marechal-do-Ar Eduardo Gomes, 1-77 - Campus do CTA, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 10, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 10, 
+    "name": "Avenida Doutor Nelson d'\u00c1vila", 
+    "address": "Avenida Doutor Nelson d'\u00c1vila, 190-244 - Vila Sanches, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 11, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 11, 
+    "name": "R. Paraibuna, 1784", 
+    "address": "R. Paraibuna, 1784 - Vila Sanches, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 12, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 12, 
+    "name": "Av. Deputado Benedito Matarazzo, sn", 
+    "address": "Av. Deputado Benedito Matarazzo, sn - Vila Sanches, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 13, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 13, 
+    "name": "Av. Eng. Francisco Jos\u00e9 Longo, 1524", 
+    "address": "Av. Eng. Francisco Jos\u00e9 Longo, 1524 - Vila Sanches, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 14, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 14, 
+    "name": "Av. Engenheiro Francisco Jos\u00e9 Longo, 1189", 
+    "address": "Av. Engenheiro Francisco Jos\u00e9 Longo, 1189 - Vila Sanches, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 15, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 15, 
+    "name": "Av. Eng. Francisco Jos\u00e9 Longo, 925", 
+    "address": "Av. Eng. Francisco Jos\u00e9 Longo, 925 - Jardim S\u00e3o Dimas, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 16, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 16, 
+    "name": "Avenida Engenheiro Francisco Jos\u00e9 Longo", 
+    "address": "Avenida Engenheiro Francisco Jos\u00e9 Longo, 669-745 - Jardim S\u00e3o Dimas, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 17, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 17, 
+    "name": "Avenida Engenheiro Francisco Jos\u00e9 Longo", 
+    "address": "Avenida Engenheiro Francisco Jos\u00e9 Longo, 37-99 - Jardim S\u00e3o Dimas, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 18, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 18, 
+    "name": "Av. Dr. Jo\u00e3o Guilhermino, s/n", 
+    "address": "Av. Dr. Jo\u00e3o Guilhermino, s/n - Centro, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 19, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 19, 
+    "name": "Av. Doutor Jo\u00e3o Guilhermino, 37", 
+    "address": "Av. Doutor Jo\u00e3o Guilhermino, 37 - Centro, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 20, 
+  "model": "busapp.stop", 
+  "fields": {
+    "point": 20, 
+    "name": "R. Ant\u00f4nio Saes, 110", 
+    "address": "R. Ant\u00f4nio Saes, 110 - Jardim Matarazzo, S\u00e3o Jos\u00e9 dos Campos - State of S\u00e3o Paulo, Brazil"
+  }
+},
+{
+  "pk": 1, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 2, 
+    "first_stop": 1, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 2, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 3, 
+    "first_stop": 2, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 3, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 4, 
+    "first_stop": 3, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 4, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 5, 
+    "first_stop": 4, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 5, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 6, 
+    "first_stop": 5, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 6, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 7, 
+    "first_stop": 6, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 7, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 8, 
+    "first_stop": 7, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 8, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 9, 
+    "first_stop": 8, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 9, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 10, 
+    "first_stop": 9, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 10, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 11, 
+    "first_stop": 10, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 11, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 12, 
+    "first_stop": 11, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 12, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 13, 
+    "first_stop": 12, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 13, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 14, 
+    "first_stop": 13, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 14, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 15, 
+    "first_stop": 14, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 15, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 16, 
+    "first_stop": 15, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 16, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 17, 
+    "first_stop": 16, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 17, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 18, 
+    "first_stop": 17, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 18, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 19, 
+    "first_stop": 18, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 19, 
+  "model": "busapp.linesegment", 
+  "fields": {
+    "second_stop": 20, 
+    "first_stop": 19, 
+    "time_estimated": null
+  }
+},
+{
+  "pk": 1, 
+  "model": "busapp.busline", 
+  "fields": {
+    "name": "VILA TEREZINHA / CTA", 
+    "number": "112"
+  }
+},
+{
+  "pk": 1, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 1, 
+    "order": 0
+  }
+},
+{
+  "pk": 2, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 2, 
+    "order": 1
+  }
+},
+{
+  "pk": 3, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 3, 
+    "order": 2
+  }
+},
+{
+  "pk": 4, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 4, 
+    "order": 3
+  }
+},
+{
+  "pk": 5, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 5, 
+    "order": 4
+  }
+},
+{
+  "pk": 6, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 6, 
+    "order": 5
+  }
+},
+{
+  "pk": 7, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 7, 
+    "order": 6
+  }
+},
+{
+  "pk": 8, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 8, 
+    "order": 7
+  }
+},
+{
+  "pk": 9, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 9, 
+    "order": 8
+  }
+},
+{
+  "pk": 10, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 10, 
+    "order": 9
+  }
+},
+{
+  "pk": 11, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 11, 
+    "order": 10
+  }
+},
+{
+  "pk": 12, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 12, 
+    "order": 11
+  }
+},
+{
+  "pk": 13, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 13, 
+    "order": 12
+  }
+},
+{
+  "pk": 14, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 14, 
+    "order": 13
+  }
+},
+{
+  "pk": 15, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 15, 
+    "order": 14
+  }
+},
+{
+  "pk": 16, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 16, 
+    "order": 15
+  }
+},
+{
+  "pk": 17, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 17, 
+    "order": 16
+  }
+},
+{
+  "pk": 18, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 18, 
+    "order": 17
+  }
+},
+{
+  "pk": 19, 
+  "model": "busapp.buslinerelation", 
+  "fields": {
+    "bus_line": 1, 
+    "line_segment": 19, 
+    "order": 18
+  }
+}
+]
