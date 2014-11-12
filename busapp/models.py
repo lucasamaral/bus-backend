@@ -47,7 +47,7 @@ class LinePointRelation(models.Model):
 
 
 class BusLine(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=100)
     number = models.CharField(max_length=20)
     segments = models.ManyToManyField(LineSegment, through='BusLineRelation')
 
@@ -79,7 +79,7 @@ class BusLineRelation(models.Model):
 
 
 class Bus(models.Model):
-    departure_time = models.DateTimeField()
+    departure_time = models.TimeField()
     bus_line = models.ForeignKey(BusLine)
 
     def __unicode__(self):
