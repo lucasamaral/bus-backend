@@ -6,7 +6,7 @@ class Point(models.Model):
     lon = models.DecimalField(max_digits=9, decimal_places=6)
 
     def __unicode__(self):
-        return 'Lat:%011.6fLon:%011.6f' % (self.lat, self.lon)
+        return 'Lat:%011.6f Lon:%011.6f' % (self.lat, self.lon)
 
 
 class Stop(models.Model):
@@ -52,18 +52,24 @@ class BusLine(models.Model):
     segments = models.ManyToManyField(LineSegment, through='BusLineRelation')
 
     def get_start_segment(self):
-        first = BusLineRelation.objects.filter(bus_line=self).order_by('order').first()
+        first = self.buslinerelation_set.all().order_by('order').first()
         if first:
             return first.line_segment
         else:
             return None
 
     def get_end_segment(self):
-        last = BusLineRelation.objects.filter(bus_line=self).order_by('order').last()
+        last = self.buslinerelation_set.all().order_by('order').last()
         if last:
             return last.line_segment
         else:
             return None
+
+    def stop_points(self):
+        all_segs_ordered = self.buslinerelation_set.all().order_by('order')
+        stops_pts_in = [seg.line_segment.first_stop.point for seg in all_segs_ordered]
+        stops_pts_in += [all_segs_ordered.last().line_segment.second_stop.point]
+        return stops_pts_in
 
     def __unicode__(self):
         return self.number + '-' + self.name

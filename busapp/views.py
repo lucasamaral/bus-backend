@@ -155,7 +155,5 @@ class BusLineRelationViewSet(viewsets.ModelViewSet):
     model = BusLineRelation
 
 
-
-
 def index(request):
     return render(request, 'busapp/index.html', {})
