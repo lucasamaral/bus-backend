@@ -67,8 +67,10 @@ class BusLine(models.Model):
 
     def stop_points(self):
         all_segs_ordered = self.buslinerelation_set.all().order_by('order')
-        stops_pts_in = [seg.line_segment.first_stop.point for seg in all_segs_ordered]
-        stops_pts_in += [all_segs_ordered.last().line_segment.second_stop.point]
+        stops_pts_in = [{'point': seg.line_segment.second_stop.point, 'seg_id': seg.line_segment.id}
+                        for seg in all_segs_ordered]
+        stops_pts_in.insert(0, {'point': all_segs_ordered.first().line_segment.first_stop.point,
+                                'seg_id': all_segs_ordered.first().id})
         return stops_pts_in
 
     def __unicode__(self):
