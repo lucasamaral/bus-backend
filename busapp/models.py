@@ -51,6 +51,9 @@ class BusLine(models.Model):
     number = models.CharField(max_length=20)
     segments = models.ManyToManyField(LineSegment, through='BusLineRelation')
 
+    def segs_ordered(self):
+        return [x.line_segment for x in self.buslinerelation_set.all().order_by('order')]
+
     def get_start_segment(self):
         first = self.buslinerelation_set.all().order_by('order').first()
         if first:

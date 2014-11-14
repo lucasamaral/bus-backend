@@ -44,7 +44,8 @@ class BusLineSerializer(serializers.ModelSerializer):
     start_segment = serializers.Field(source='get_start_segment')
     end_segment = serializers.Field(source='get_end_segment')
     stop_points = serializers.Field(source='stop_points')
+    segs_ordered = LineSegmentSerializer(many=True)
 
     class Meta:
         model = BusLine
-        fields = ('name', 'number', 'segments', 'start_segment', 'end_segment', 'stop_points')
+        fields = ('name', 'number', 'segments', 'start_segment', 'end_segment', 'stop_points', 'segs_ordered')
