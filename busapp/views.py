@@ -135,7 +135,21 @@ def parse_results_latlon(json):
 
 
 class TimeMeasuredViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.AllowAny,)
     model = TimeMeasured
+
+
+class TimeMeasuredMultiViewSet(views.APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        data = JSONLatinParser().parse(request)
+        serializer = TimeMeasuredSerializer(data=data, many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LineSegmentViewSet(viewsets.ModelViewSet):
