@@ -9,7 +9,13 @@ class Command(BaseCommand):
         relations = BusLineRelation.objects.filter(bus_line__in=all_lines)
         for rel in relations:
             times = rel.line_segment.timemeasured_set.all()
-            average = reduce(lambda x, y: x.time_value + y.time_value, times)/len(times)
+            if len(times) > 1:
+                average = reduce(lambda x, y: x.time_value + y.time_value, times)/len(times)
+            elif len(times) == 1:
+                average = times[0].time_value
+            else:
+                average = 0
+
             rel.line_segment.time_estimated = int(average)
             rel.line_segment.save()
             self.stdout.write('Line:%s-Avg:%s' % (rel.line_segment.id, average))
