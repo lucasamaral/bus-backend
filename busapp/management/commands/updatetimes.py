@@ -11,6 +11,8 @@ class Command(BaseCommand):
             times = rel.line_segment.timemeasured_set.all()
             if len(times) == 0:
                 average = 0
+            elif len(times) == 1:
+                average = times[0].time_value
             else:
                 average = reduce(lambda x, y: x.time_value + y.time_value, times)/len(times)
 
